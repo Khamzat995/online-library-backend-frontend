@@ -1,0 +1,139 @@
+<style>
+  .containerTwo {
+    display: flex;
+    margin-top: 35px;
+  }
+  .left {
+    margin-left: 50px;
+  }
+  .col-md-5 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .rating-area:not(:checked) > input {
+    display: none;
+  }
+  .rating-area:not(:checked) > label {
+    float: right;
+    width: 28px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+  }
+  .rating-area:not(:checked) > label:before {
+    content: '★';
+  }
+  .rating-area > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+  }
+  .rating-area:not(:checked) > label:hover,
+  .rating-area:not(:checked) > label:hover ~ label {
+    color: gold;
+  }
+  .rating-area > input:checked + label:hover,
+  .rating-area > input:checked + label:hover ~ label,
+  .rating-area > input:checked ~ label:hover,
+  .rating-area > input:checked ~ label:hover ~ label,
+  .rating-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+  }
+  .rate-area > label:active {
+    position: relative;
+  }
+  .star {
+    display: flex;
+    margin-top: 25px;
+    text-align: center;
+  }
+  .text-star {
+    margin-top: 10px;
+  }
+  .btn-review {
+    margin-top: 35px;
+  }
+  .book-status {
+    display: flex;
+    width: 250px;
+  }
+  .book-status-one {
+    display: flex;
+    width: 250px;
+  }
+</style>
+<div class="container">
+  <div class="containerTwo">
+    <div class="" style="max-width: 750px;">
+      <div class="shadow row g-0">
+        <div class="col-md-5">
+          <img src="{{post.imageURL}}" class="img-fluid rounded-start" alt="картинка" width="280"/>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h4 class="card-title">{{post.title}}</h4>
+            <p class="card-text">{{post.text}}This is a wider card with
+              supporting text below as a natural lead-in to additional content.
+              This content is a little bit longer.</p>
+          <div class="book-status">
+            <h6>Книга:&nbsp;</h6>{{#if post.rented}} <h6 style="color: red">арендована</h6>
+          {{else}}  <h6 style="color: green">свободна</h6> {{/if}}
+          </div>
+          <div class="book-status-one">
+          <h6>Кто взял:&nbsp; </h6> {{#if post.rented}} <h6 style="color: green">{{post.rented.name}}</h6>
+          {{else}}  <h6 style="color: green"> ни кто не взял</h6> {{/if}}
+          </div>
+            <h6>Взять почитать:</h6>
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+              <a href="/users/6124dc943e80b80c78a2659f/rentBook/{{post._id}}"><label class="btn btn-outline-primary" for="btncheck1">Дейнерис</label></a>
+              <a href="/users/6124de4e0c885c309cf1d884/rentBook/{{post._id}}"><label class="btn btn-outline-primary" for="btncheck2">Джон</label></a>
+              <a href="/users/6124de9d0c885c309cf1d886/rentBook/{{post._id}}"><label class="btn btn-outline-primary" for="btncheck2">Тирион</label></a>
+              <a href="/users/6124def10c885c309cf1d888/rentBook/{{post._id}}"><label class="btn btn-outline-primary" for="btncheck3">Ария</label></a>
+            </div>
+            <div class="btn-review">
+              <button type="button" class="btn btn-light position-relative">Отзывы
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">99+
+                  <span class="visually-hidden"></span>
+                </span>
+              </button>
+            </div>
+      <div class="star"><h6 class="text-star">Ваша оценка:</h6>
+            <div class="rating-area">
+              <input type="radio" id="star-5" name="rating" value="5">
+              <label for="star-5" title="Оценка «5»"></label>
+              <input type="radio" id="star-4" name="rating" value="4">
+              <label for="star-4" title="Оценка «4»"></label>
+              <input type="radio" id="star-3" name="rating" value="3">
+              <label for="star-3" title="Оценка «3»"></label>
+              <input type="radio" id="star-2" name="rating" value="2">
+              <label for="star-2" title="Оценка «2»"></label>
+              <input type="radio" id="star-1" name="rating" value="1">
+              <label for="star-1" title="Оценка «1»"></label>
+            </div>
+          </div>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="shadow left">
+      <div class="card">
+        <div class="alert alert-primary" role="alert">
+          <marquee scrollamount="4" style="color: #5985de; font-size: 20px; font-weight: bolder; line-height: 150%; text-shadow: #000000 0px 1px 1px;">Intocode Coding Bootcamp! Здесь могла быть Ваша реклама!</marquee>
+        </div>
+        <a href="https://www.apple.com/ru" target="_blank"><img
+            src="https://www.ixbt.com/img/n1/news/2021/4/3/podcast-cover-b2b608a849c6409bfe0de150bb33770b-scaled_large.jpeg"
+            width="318"
+            alt="картинка"
+          /></a>
+        <p></p>
+        <a href="https://moscow.megafon.ru/" target="_blank">
+          <img src="https://cs8.pikabu.ru/post_img/2017/05/19/6/149518684415692779.jpg" width="318" alt="картинка"/></a>
+      </div>
+    </div>
+  </div>
+</div>

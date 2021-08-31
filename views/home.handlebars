@@ -1,0 +1,50 @@
+<style>
+  .card { margin-bottom: 15px; margin-right: 20px; width: 200px; }
+  a { text-decoration: none; color: black; }
+  .rating-result {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .rating-result span {
+    padding: 0;
+    font-size: 24px;
+    margin: 0px;
+    line-height: 1;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+  }
+  .rating-result > span:before {
+    content: '★';
+  }
+  .rating-result > span.active {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+  }
+</style>
+
+<p></p>
+<p></p>
+<h3> Главная страница </h3>
+<p></p>
+<p></p>
+<div class="container-fluid">
+  <div class="d-flex justify-content-between flex-wrap">
+    {{#each book}}
+      <div class="shadow card" style="width: 20rem;">
+        <img src="{{imageURL}}" class="card-img-top" alt="каринка" height="450"/>
+        <div class="card-body">
+          <a class="title" href="/book/{{_id}}">
+            <h5 class="card-title">{{title}}</h5></a>
+          <p class="card-text">{{text}}</p>
+          <div class="rating-result"> Рейтинг:
+            <span class="active"></span>
+            <span class="active"></span>
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

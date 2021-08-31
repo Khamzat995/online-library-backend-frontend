@@ -1,0 +1,84 @@
+<style>
+  .containerTwo {
+    display:  flex;
+    margin-top: 35px;
+  }
+  .left {
+    margin-left: 50px;
+  }
+
+  .col-md-5 {
+    padding-top: 15px;
+  }
+  .row {
+    margin-bottom: 20px;
+  }
+
+.user-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline
+}
+  .img-fluid {
+    border-radius: 100px; /* Радиус скругления */
+    border: 3px solid #494646FF; /* Параметры рамки */
+    box-shadow: 0 0 7px #494646; /* Параметры тени */
+  }
+</style>
+
+  <div class="container">
+    <div class="containerTwo">
+      <div class="block" style="max-width: 750px;">
+    {{#each user}}
+        <div class="shadow row g-0">
+          <div class="col-md-5">
+            <img src="{{imageURL}}" class="img-fluid rounded-start" alt="картинка" width="300"/>
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <h5 class="card-title">{{name}}</h5>
+              <p class="card-text">{{description}}</p>
+              <div class="user-list">
+              <h6>Статус клиента: </h6>{{#if isBlocked}} <h6 style="color: red">Блокирован</h6>
+            {{else}}  <h6 style="color: green"> Активен</h6> {{/if}}
+                <div class="btn-group">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Читает книги
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">{{rentBook.length}}
+                      <span class="visually-hidden">
+                      </span>
+                    </span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    {{#each rentBook}}
+                      <li>
+                        <a href="/users/{{../_id}}/returnBook/{{_id}}" class="dropdown-item">{{title}}<h6 style="color: cornflowerblue">вернуть книгу</h6></a>
+                      </li>
+                     {{/each}}
+                  </ul>
+                </div>
+            </div>
+              <a href="/book/admin/block/{{_id}}" class="shadow btn btn-danger">Заблокировать</a>
+              <a href="/book/admin/unblock/{{_id}}" class="shadow btn btn-success">Разблокировать</a>
+            </div>
+          </div>
+        </div>
+    {{/each}}
+      </div>
+
+      <div class="shadow left">
+        <div class="card">
+          <div class="alert alert-primary" role="alert" width="318">
+            <marquee scrollamount="4" style="color: #5985de; font-size: 20px; font-weight: bolder; line-height: 150%; text-shadow: #000000 0px 1px 1px;">Intocode Coding Bootcamp! Здесь могла быть Ваша реклама!</marquee>
+          </div>
+          <a href="https://www.apple.com/ru" target="_blank"><img
+            src="https://www.ixbt.com/img/n1/news/2021/4/3/podcast-cover-b2b608a849c6409bfe0de150bb33770b-scaled_large.jpeg"
+            width="318"
+            alt="картинка" title="Биткоин"
+          /></a>
+          <p></p>
+          <a href="https://moscow.megafon.ru/" target="_blank">
+            <img src="https://cs8.pikabu.ru/post_img/2017/05/19/6/149518684415692779.jpg" width="318" alt="картинка" title="Мегафон"/></a>
+        </div>
+      </div>
+    </div>
+  </div>

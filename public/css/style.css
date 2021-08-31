@@ -1,0 +1,128 @@
+.card { margin-bottom: 15px; margin-right: 20px; width: 200px; }
+a { text-decoration: none; color: black; }
+.rating-result {
+  width: 200px;
+  margin: 0 auto;
+}
+.rating-result span {
+  padding: 0;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-result > span:before {
+  content: '★';
+}
+.rating-result > span.active {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.card { margin-bottom: 15px; margin-right: 20px; width: 200px; }
+a { text-decoration: none; color: black; }
+.rating-result {
+  width: 200px;
+  margin: 0 auto;
+}
+.rating-result span {
+  padding: 0;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-result > span:before {
+  content: '★';
+}
+.rating-result > span.active {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.containerTwo { display:
+  flex; margin-top: 35px;
+}
+.left { margin-left:
+  50px; }
+.card-title-123 { text-align: center;
+  padding-top: 15px;
+  color: dimgrey;
+}
+.col-md-5 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.rating-area:not(:checked) > input {
+  display: none;
+}
+.rating-area:not(:checked) > label {
+  float: right;
+  width: 28px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 32px;
+  color: lightgrey;
+  text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+  content: '★';
+}
+.rating-area > input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+  position: relative;
+}
+.star {
+  display: flex;
+  margin-top: 25px;
+  text-align: center;
+}
+.text-star {
+  margin-top: 10px;
+}
+.btn-review {
+  margin-top: 35px;
+}
+.containerTwo {
+  display:  flex;
+  margin-top: 35px;
+}
+.left {
+  margin-left: 50px;
+}
+
+.col-md-5 {
+  padding-top: 15px;
+}
+.row {
+  margin-bottom: 20px;
+}
+
+.user-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline
+}
+.img-fluid {
+  border-radius: 100px; /* Радиус скругления */
+  border: 3px solid #494646FF; /* Параметры рамки */
+  box-shadow: 0 0 7px #494646; /* Параметры тени */
+}
+
